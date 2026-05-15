@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос жителей Карымского</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        h1 { color: #2c3e50; text-align: center; font-size: 22px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .section-title {
+            background: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .question-block {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 3px solid #3498db;
+        }
+        .question-title { font-weight: 600; margin-bottom: 10px; display: block; }
+        
+        .option { margin-bottom: 6px; display: flex; align-items: center; cursor: pointer; }
+        input[type="radio"], input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+        
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .btn-submit {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn-submit:hover { background-color: #219150; }
+        
+        .row { display: flex; gap: 20px; margin-bottom: 20px; }
+        .row div { flex: 1; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Опрос жителей Карымского</h1>
+
+    <form action="#">
+        
+        <!-- Личные данные -->
+        <div class="row">
+            <div>
+                <label class="question-title">Ваш пол:</label>
+                <select name="gender">
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                </select>
+            </div>
+            <div>
+                <label class="question-title">Ваш возраст:</label>
+                <input type="text" name="age" placeholder="Например: 25">
+            </div>
+        </div>
+
+        <span class="section-title">Вопросы о поселке</span>
+
+        <!-- Вопрос 1 -->
+        <div class="question-block">
+            <span class="question-title">1. Довольны ли вы состоянием дорог в поселке?</span>
+            <div class="option"><input type="radio" name="q1" id="q1_1"><label for="q1_1">Да, дороги в хорошем состоянии</label></div>
+            <div class="option"><input type="radio" name="q1" id="q1_2"><label for="q1_2">Требуется ямочный ремонт</label></div>
+            <div class="option"><input type="radio" name="q1" id="q1_3"><label for="q1_3">Дороги в критическом состоянии</label></div>
+            <input type="text" name="q1_custom" placeholder="Укажите конкретную улицу...">
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="question-block">
+            <span class="question-title">2. Как вы оцениваете качество уличного освещения ночью?</span>
+            <div class="option"><input type="radio" name="q2" id="q2_1"><label for="q2_1">Света достаточно везде</label></div>
+            <div class="option"><input type="radio" name="q2" id="q2_2"><label for="q2_2">Освещены только центральные улицы</label></div>
+            <div class="option"><input type="radio" name="q2" id="q2_3"><label for="q2_3">Очень темно, освещения почти нет</label></div>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="question-block">
+            <span class="question-title">3. Что нужно построить в Карымском для молодежи?</span>
+            <div class="option"><input type="checkbox" name="q3" id="q3_1"><label for="q3_1">Кинотеатр / Досуговый центр</label></div>
+            <div class="option"><input type="checkbox" name="q3" id="q3_2"><label for="q3_2">Современный спортзал</label></div>
+            <div class="option"><input type="checkbox" name="q3" id="q3_3"><label for="q3_3">Скейт-парк / Зоны отдыха</label></div>
+            <input type="text" name="q3_custom" placeholder="Свой вариант...">
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="question-block">
+            <span class="question-title">4. Сталкиваетесь ли вы с проблемой бродячих собак?</span>
+            <div class="option"><input type="radio" name="q4" id="q4_1"><label for="q4_1">Нет, не вижу их</label></div>
+            <div class="option"><input type="radio" name="q4" id="q4_2"><label for="q4_2">Иногда встречаются</label></div>
+            <div class="option"><input type="radio" name="q4" id="q4_3"><label for="q4_3">Да, это опасная проблема для поселка</label></div>
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="question-block">
+            <span class="question-title">5. Качество воды в вашем доме вас устраивает?</span>
+            <div class="option"><input type="radio" name="q5" id="q5_1"><label for="q5_1">Да, вода чистая</label></div>
+            <div class="option"><input type="radio" name="q5" id="q5_2"><label for="q5_2">Вода имеет запах или цвет</label></div>
+            <div class="option"><input type="radio" name="q5" id="q5_3"><label for="q5_3">Пользуемся только привозной/своей скважиной</label></div>
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="question-block">
+            <span class="question-title">6. Хватает ли вам количества рейсов общественного транспорта?</span>
+            <div class="option"><input type="radio" name="q6" id="q6_1"><label for="q6_1">Да, ходят часто</label></div>
+            <div class="option"><input type="radio" name="q6" id="q6_2"><label for="q6_2">Нужно больше рейсов в утренние/вечерние часы</label></div>
+            <div class="option"><input type="radio" name="q6" id="q6_3"><label for="q6_3">Транспорт ходит очень плохо</label></div>
+        </div>
+
+        <!-- Вопрос 7 -->
+        <div class="question-block">
+            <span class="question-title">7. Какую проблему вы считаете самой острой на сегодня?</span>
+            <input type="text" name="q7" placeholder="Напишите кратко самое важное...">
+        </div>
+
+        <button type="submit" class="btn-submit">Отправить ответы</button>
+    </form>
+</div>
+
+</body>
+</html>
